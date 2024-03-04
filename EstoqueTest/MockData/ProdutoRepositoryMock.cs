@@ -31,6 +31,10 @@ namespace EstoqueTest.MockData
 
         public void AdicionarProduto(Produto produto)
         {
+            if (produto.ProdutoId <= 0)
+            {
+                throw new ArgumentException("O ID do produto é obrigatorio!", nameof(produto));
+            }
             _produtos.Add(produto);
         }
 
