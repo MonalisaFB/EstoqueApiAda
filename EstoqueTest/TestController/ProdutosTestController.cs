@@ -58,5 +58,20 @@ namespace EstoqueTest.TestController
 
         }
 
+        [Fact]
+        public void Entrada_LoteOpcional()
+        {
+            //Arrange
+            var produtoRepositorioMock = new ProdutoRepositoryMock();
+            var service = new ProdutoServiceMock(produtoRepositorioMock);
+            var novoProduto = new Produto
+            {
+                ProdutoId = 3,
+                Descricao = "Suco de Laranja",
+                Quantidade = 20,
+                DataFabricacao = DateTime.Now,
+                DateValidade = DateTime.Now.AddDays(5)
+            };
+        }
     }
 }
