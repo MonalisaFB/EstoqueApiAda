@@ -16,7 +16,7 @@ namespace EstoqueTest.MockData
             _produtos = new List<Produto>();
 
             _produtos.Add(new Produto { ProdutoId = 1, Descricao = "Sorvete de Brigadeiro", Lote = 1, Quantidade = 5, DataFabricacao = DateTime.Now, DateValidade = DateTime.Now.AddDays(30) });
-            _produtos.Add(new Produto { ProdutoId = 2, Descricao = "Suco", Lote = 2, Quantidade = 10, DataFabricacao = DateTime.Now, DateValidade = DateTime.Now.AddDays(5) });
+            _produtos.Add(new Produto { ProdutoId = 2, Descricao = "Suco", Lote = 2, Quantidade = 10, DataFabricacao = DateTime.Now, DateValidade = DateTime.Now.AddDays(-5) });
 
         }
 

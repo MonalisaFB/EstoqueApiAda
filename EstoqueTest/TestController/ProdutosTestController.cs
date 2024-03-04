@@ -73,5 +73,19 @@ namespace EstoqueTest.TestController
                 DateValidade = DateTime.Now.AddDays(5)
             };
         }
+
+        [Fact]
+        public void ListarProdutos_NaoRetornaProdutosVencidos()
+        {
+            //Arrange 
+            var produtoRepositorioMock = new ProdutoRepositoryMock();
+            var service = new ProdutoServiceMock(produtoRepositorioMock);
+
+            //Act
+            var produtos = service.ObterProdutos();
+
+            //Assert
+            produtos.Should().NotContain(x => x.DateValidade < DateTime.Now);
+        }
     }
 }
